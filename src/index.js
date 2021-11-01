@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { IconContext } from 'react-icons';
+import 'bootstrap/dist/css/bootstrap-reboot.css';
 
 ReactDOM.render(
   <React.StrictMode>

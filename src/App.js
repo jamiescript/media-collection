@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Logo } from './components/Logo';
 import { Dialog } from '@reach/dialog';
+import { Button, Input, FormGroup } from './components/lib';
 import '@reach/dialog/styles.css';
 import './App.css';
 
@@ -17,16 +18,16 @@ function AuthForm({ onSubmit, buttonText }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <FormGroup>
         <label htmlFor="username">Username</label>
-        <input type="text" id="username" />
-      </div>
-      <div>
+        <Input type="text" id="username" />
+      </FormGroup>
+      <FormGroup>
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" />
-      </div>
+        <Input type="password" id="password" />
+      </FormGroup>
       <div>
-        <button type="submit">{buttonText}</button>
+        <Button type="submit">{buttonText}</Button>
       </div>
     </form>
   );
@@ -50,14 +51,16 @@ function App() {
         <h1>Media Collection</h1>
 
         <div>
-          <button onClick={() => setOpenModal('login')}>Login</button>
+          <Button onClick={() => setOpenModal('login')}>Login</Button>
         </div>
         <div>
-          <button onClick={() => setOpenModal('register')}>Register</button>
+          <Button onClick={() => setOpenModal('register')} variant="secondary">
+            Register
+          </Button>
         </div>
         <Dialog aria-label="Login Form" isOpen={openModal === 'login'}>
           <div>
-            <button onClick={() => setOpenModal('none')}>Close</button>
+            <Button onClick={() => setOpenModal('none')}>Close</Button>
           </div>
           <h3>Login</h3>
           <AuthForm onSubmit={login} buttonText="Login" />
@@ -65,10 +68,14 @@ function App() {
 
         <Dialog aria-label="Regitration Form" isOpen={openModal === 'register'}>
           <div>
-            <button onClick={() => setOpenModal('none')}>Close</button>
+            <Button onClick={() => setOpenModal('none')}>Close</Button>
           </div>
           <h3>Register</h3>
-          <AuthForm onSubmit={register} buttonText="Register" />
+          <AuthForm
+            onSubmit={register}
+            buttonText="Register"
+            variant="secondary"
+          />
         </Dialog>
       </header>
     </div>
