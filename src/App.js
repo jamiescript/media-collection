@@ -3,7 +3,14 @@ import { jsx } from '@emotion/react';
 import * as React from 'react';
 import { Logo } from './components/Logo';
 import { Dialog } from '@reach/dialog';
-import { Button, Input, FormGroup } from './components/lib';
+import {
+  Button,
+  Input,
+  FormGroup,
+  Heading3,
+  DialogClose,
+} from './components/lib';
+import VisuallyHidden from '@reach/visually-hidden';
 import '@reach/dialog/styles.css';
 import './App.css';
 
@@ -86,18 +93,24 @@ function App() {
         </Button>
       </div>
       <Dialog aria-label="Login Form" isOpen={openModal === 'login'}>
-        <div>
-          <Button onClick={() => setOpenModal('none')}>Close</Button>
-        </div>
-        <h3>Login</h3>
+        <DialogClose>
+          <Button onClick={() => setOpenModal('none')}>
+            <VisuallyHidden>Close</VisuallyHidden>
+            <span>&times;</span>
+          </Button>
+        </DialogClose>
+        <Heading3>Login</Heading3>
         <AuthForm onSubmit={login} buttonText="Login" />
       </Dialog>
 
       <Dialog aria-label="Regitration Form" isOpen={openModal === 'register'}>
-        <div>
-          <Button onClick={() => setOpenModal('none')}>Close</Button>
-        </div>
-        <h3>Register</h3>
+        <DialogClose>
+          <Button onClick={() => setOpenModal('none')}>
+            <VisuallyHidden>Close</VisuallyHidden>
+            <span>&times;</span>
+          </Button>
+        </DialogClose>
+        <Heading3>Register</Heading3>
         <AuthForm
           onSubmit={register}
           buttonText="Register"

@@ -1,14 +1,20 @@
 import styled from '@emotion/styled/macro';
 import { Dialog as ReachDialog } from '@reach/dialog';
+import * as colors from './styles/colors';
+import * as mq from './styles/media-queries';
+
+const Heading3 = styled.h3({
+  textAlign: 'center',
+});
 
 const buttonVariants = {
   primary: {
-    background: '#3d5af3',
-    color: 'white',
+    background: colors.indigo,
+    color: colors.white,
   },
   secondary: {
-    background: 'white',
-    color: 'black',
+    background: colors.white,
+    color: colors.black,
   },
 };
 
@@ -24,8 +30,8 @@ const Button = styled.button(
 
 const Input = styled.input({
   borderRadius: '3px',
-  border: '1px solid grey',
-  background: 'grey',
+  border: `1px solid ${colors.grey}`,
+  background: colors.grey,
   padding: '8px 12px',
 });
 
@@ -40,10 +46,15 @@ const Dialog = styled(ReachDialog)({
   paddingBottom: '3.5em',
   boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.2)',
   margin: '20vh auto',
-  '@media (max-width: 991px)': {
+  [mq.small]: {
     width: '100%',
     margin: '10vh auto',
   },
 });
 
-export { Button, Dialog, Input, FormGroup };
+const DialogClose = styled.div({
+  display: 'flex',
+  justifyContent: 'flex-end',
+});
+
+export { Button, Dialog, Input, FormGroup, Heading3, DialogClose };
