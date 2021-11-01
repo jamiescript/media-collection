@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import { Dialog as ReachDialog } from '@reach/dialog';
 
 const buttonVariants = {
   primary: {
-    background: 'black',
+    background: '#3d5af3',
     color: 'white',
   },
   secondary: {
