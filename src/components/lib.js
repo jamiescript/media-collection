@@ -76,6 +76,10 @@ const NavListItemLink = styled(Link)({
   padding: '8px 12px',
 });
 
+const SearchInput = styled(Input)({
+  width: '100%',
+});
+
 export {
   Button,
   Dialog,
@@ -86,4 +90,5 @@ export {
   NavList,
   NavListItem,
   NavListItemLink,
+  SearchInput,
 };

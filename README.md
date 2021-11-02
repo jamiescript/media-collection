@@ -1,3 +1,3 @@
-# Media Collection
+# Crypto Tracker
 
-Keeping track of all the media I have consumed, and am yet to consume.
+Search for current crypto prices
