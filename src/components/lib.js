@@ -2,6 +2,7 @@ import styled from '@emotion/styled/macro';
 import { Dialog as ReachDialog } from '@reach/dialog';
 import * as colors from './styles/colors';
 import * as mq from './styles/media-queries';
+import { Link } from 'react-router-dom';
 
 const Heading3 = styled.h3({
   textAlign: 'center',
@@ -57,4 +58,32 @@ const DialogClose = styled.div({
   justifyContent: 'flex-end',
 });
 
-export { Button, Dialog, Input, FormGroup, Heading3, DialogClose };
+const NavList = styled.ul({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  listStyleType: 'none',
+  paddingLeft: '0',
+});
+
+const NavListItem = styled.li({
+  background: colors.white,
+  marginRight: '1rem',
+});
+
+const NavListItemLink = styled(Link)({
+  color: colors.black,
+  textDecoration: 'none',
+  padding: '8px 12px',
+});
+
+export {
+  Button,
+  Dialog,
+  Input,
+  FormGroup,
+  Heading3,
+  DialogClose,
+  NavList,
+  NavListItem,
+  NavListItemLink,
+};

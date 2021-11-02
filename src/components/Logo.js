@@ -1,9 +1,10 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import { GiBookshelf } from 'react-icons/gi';
 
 const Logo = ({ size }) => {
   return (
-    <div>
+    <div css={{ display: 'flex', justifyContent: 'center' }}>
       <GiBookshelf size={size} />
     </div>
   );
